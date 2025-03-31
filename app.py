@@ -340,12 +340,18 @@ if __name__ == "__main__":
     print(f"💬 Web UI available at http://{host if host != '0.0.0.0' else 'localhost'}:{port}")
     print(f"📖 API docs available at http://{host if host != '0.0.0.0' else 'localhost'}:{port}/docs")
     
-    # Read current API_URL for user information
+    # Read current API_URL and HF_TOKEN for user information
     api_url = os.environ.get("ORPHEUS_API_URL")
     if not api_url:
         print("⚠️ ORPHEUS_API_URL not set. Please configure in .env file before generating speech.")
     else:
         print(f"🔗 Using LLM inference server at: {api_url}")
+
+    hf_token = os.environ.get("HF_TOKEN")
+    if not hf_token:
+        print("⚠️ HF_TOKEN not set. Some API endpoints may require authentication.")
+    else:
+        print("✅ Hugging Face token configured")
         
     # Include restart.flag in the reload_dirs to monitor it for changes
     extra_files = ["restart.flag"] if os.path.exists("restart.flag") else []

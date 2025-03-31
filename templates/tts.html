@@ -236,6 +236,14 @@
                       </div>
                       
                       <div>
+                        <label for="hf_token" class="block text-xs font-medium text-white mb-1">Hugging Face Token</label>
+                        <input type="password" id="hf_token" name="HF_TOKEN" 
+                               placeholder="hf_..." 
+                               class="block w-full rounded-md bg-dark-700 border-dark-600 text-white text-sm focus:border-primary-500 focus:ring-primary-500 focus:ring-offset-dark-800 px-3 py-2">
+                        <p class="mt-1 text-xs text-purple-300">Required for some API endpoints. Get your token from <a href="https://huggingface.co/settings/tokens" target="_blank" class="text-primary-400 hover:text-primary-300">Hugging Face</a></p>
+                      </div>
+                      
+                      <div>
                         <label for="api_timeout" class="block text-xs font-medium text-white mb-1">API Timeout (seconds)</label>
                         <input type="number" id="api_timeout" name="ORPHEUS_API_TIMEOUT" min="10" max="1800" step="1"
                                class="block w-full rounded-md bg-dark-700 border-dark-600 text-white text-sm focus:border-primary-500 focus:ring-primary-500 focus:ring-offset-dark-800 px-3 py-2">
@@ -367,7 +375,7 @@
           <div class="flex items-center space-x-4">
             <button id="play-btn" class="inline-flex items-center px-4 py-2 border border-primary-700 rounded-md shadow-sm text-sm font-medium text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-dark-800 focus:ring-offset-2">
               <svg class="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+                <path fill-rule="evenodd" d="M10 18a8 8 0 11-16 0 8 8 0 0116 0zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
               </svg>
               Play
             </button>

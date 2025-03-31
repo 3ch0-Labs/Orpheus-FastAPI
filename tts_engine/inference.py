@@ -85,9 +85,16 @@ API_URL = os.environ.get("ORPHEUS_API_URL")
 if not API_URL:
     print("WARNING: ORPHEUS_API_URL not set. API calls will fail until configured.")
 
+# Get Hugging Face token from environment
+HF_TOKEN = os.environ.get("HF_TOKEN")
+if not HF_TOKEN:
+    print("WARNING: HF_TOKEN not set. Some API endpoints may require authentication.")
+
 HEADERS = {
     "Content-Type": "application/json"
 }
+if HF_TOKEN:
+    HEADERS["Authorization"] = f"Bearer {HF_TOKEN}"
 
 # Request timeout settings
 try:
